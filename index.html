@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2b2622" />
+    <meta
+      name="description"
+      content="Van de kennis in je bedrijf naar herkenbare LinkedIn-content. Ontdek onze aanpak en probeer een interactief voorbeeld."
+    />
+    <title>Jullie kennis. Eindelijk gezien.</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/mark.svg" />
+    <link
+      rel="preload"
+      href="./assets/fonts/manrope-latin-500-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="./assets/vendor/scrollcraft.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Naar de inhoud</a>
+    <header class="site-header">
+      <a
+        class="brand"
+        href="#main"
+        aria-label="Homepageconcept, naar het begin"
+      >
+        <svg viewBox="0 0 36 36" width="36" height="36" aria-hidden="true">
+          <path
+            d="M5 27V9h6v18zm10 0V5h6v22zm10 0V13h6v14z"
+            fill="currentColor"
+          />
+        </svg>
+        <span
+          >naam volgt<span class="brand-sub">Een nieuw perspectief.</span></span
+        >
+      </a>
+      <nav aria-label="Hoofdnavigatie">
+        <a href="#aanpak">De aanpak</a>
+        <a href="#vragen">Vragen</a>
+      </nav>
+      <a class="button button-small" href="#voorbeeld"
+        ><span>Bekijk het voorbeeld</span><span aria-hidden="true">↗</span></a
+      >
+    </header>
+
+    <main id="main">
+      <section class="hero" data-sc-act="flow" aria-labelledby="hero-title">
+        <div class="hero-stage" aria-hidden="true">
+          <div class="hero-grid" data-sc-parallax="0.65"></div>
+          <div class="sculpture-wrap" data-sc-parallax="-2.4">
+            <img
+              class="sculpture-poster"
+              src="./assets/sculpture-poster.webp"
+              width="1000"
+              height="1000"
+              alt=""
+              fetchpriority="high"
+            />
+            <canvas id="sculpture" aria-hidden="true"></canvas>
+          </div>
+          <div class="object-label">
+            <span class="tiny-cross">+</span
+            ><span>Een andere kijk<br />op wat je al weet.</span>
+          </div>
+          <div class="specimen-label">
+            KENNIS IN BEWEGING<span>FIG. A</span>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            Jullie kennis.<br /><span>Eindelijk gezien.</span>
+          </h1>
+          <div class="hero-bottom">
+            <p>
+              We maken LinkedIn-content van wat jullie elke dag al weten.
+              Herkenbaar. Regelmatig. Helemaal jullie.
+            </p>
+            <a href="#voorbeeld" class="text-link"
+              >Bekijk het voorbeeld <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <div class="hero-foot">
+          <span>Van expertise naar zichtbaarheid.</span
+          ><span>AI in de werkplaats. Jij aan het woord.</span>
+        </div>
+      </section>
+
+      <section
+        class="thesis section-wrap"
+        data-sc-act="flow"
+        aria-labelledby="thesis-title"
+      >
+        <p class="section-note">Het begint dichterbij dan je denkt.</p>
+        <h2 id="thesis-title">
+          <span class="thesis-line" data-sc-kinetic="words" data-sc-cue="0.05"
+            >De beste content</span
+          >
+          <span class="thesis-line" data-sc-kinetic="words" data-sc-cue="0.15"
+            >zit al in je bedrijf.</span
+          >
+        </h2>
+        <div class="thesis-tail">
+          <span class="line-sign" aria-hidden="true"></span>
+          <p>
+            In die ene klantvraag. In een les uit de praktijk.<br />In een
+            mening die je niet voor jezelf hoeft te houden.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="voorbeeld"
+        class="example"
+        data-sc-act="pin"
+        data-sc-span="1.7"
+        aria-labelledby="example-title"
+      >
+        <div
+          class="sc-stage example-stage"
+          data-sc-stage
+          data-sc-verify-state="initial"
+        >
+          <div class="example-heading">
+            <div>
+              <p class="eyebrow">De contentwerkplaats</p>
+              <h2 id="example-title">Eén inzicht.<br />Meer te vertellen.</h2>
+            </div>
+            <p>
+              <strong>Fictief voorbeeld.</strong><br />Kies een bron en een
+              invalshoek.
+            </p>
+          </div>
+          <div class="workbench">
+            <div class="source-pane">
+              <fieldset class="source-options">
+                <legend>Waar begint jouw verhaal?</legend>
+                <div class="source-buttons">
+                  <button type="button" data-source="vraag" aria-pressed="true">
+                    <span aria-hidden="true">?</span>Een klantvraag
+                  </button>
+                  <button type="button" data-source="les" aria-pressed="false">
+                    <span aria-hidden="true">↳</span>Een praktijkles
+                  </button>
+                  <button
+                    type="button"
+                    data-source="visie"
+                    aria-pressed="false"
+                  >
+                    <span aria-hidden="true">✳</span>Een eigen visie
+                  </button>
+                </div>
+              </fieldset>
+              <div class="source-note">
+                <span class="source-note-label"
+                  >De oorspronkelijke gedachte</span
+                >
+                <blockquote id="source-text">
+                  “Klanten vragen ons: is één training genoeg? In ons traject
+                  oefenen teams ook tussen de sessies, met situaties uit hun
+                  eigen werk.”
+                </blockquote>
+                <div class="note-footer">
+                  <span>Fictief voorbeeld van een opleider</span
+                  ><span aria-hidden="true">↗</span>
+                </div>
+              </div>
+              <div class="angle-control">
+                <label for="angle">Maak er een…</label>
+                <select id="angle" name="angle">
+                  <option value="inzicht">Inzicht</option>
+                  <option value="praktisch">Praktische tip</option>
+                  <option value="gesprek">Gespreksstarter</option>
+                </select>
+              </div>
+            </div>
+            <div class="transfer" aria-hidden="true">
+              <span class="transfer-rule"></span
+              ><span class="transfer-arrow">→</span
+              ><span class="transfer-rule"></span>
+            </div>
+            <article class="post" aria-labelledby="post-title">
+              <div class="post-head">
+                <span class="post-avatar" aria-hidden="true">j.</span>
+                <div>
+                  <span class="post-author">Jouw naam</span
+                  ><span class="post-role"
+                    >Jouw expertise, in jouw woorden</span
+                  >
+                </div>
+                <span class="linkedin-mark" aria-hidden="true">in</span>
+              </div>
+              <div id="post-content">
+                <h3 id="post-title">
+                  Een goede training eindigt niet als iedereen naar huis gaat.
+                </h3>
+                <p>“Is één training genoeg?” Die vraag krijgen we vaak.</p>
+                <p>
+                  Daarom laten we teams tussen de sessies oefenen met situaties
+                  uit hun eigen werk. Wat ging er goed? Waar liep je vast?
+                </p>
+                <p>
+                  Die ervaringen nemen we mee naar de volgende sessie. Zo krijgt
+                  een inzicht de kans om een gewoonte te worden.
+                </p>
+              </div>
+              <div class="post-foot">
+                <span class="status-dot"></span
+                ><span>Voorbeeldpost · nog door jou te beoordelen</span>
+              </div>
+            </article>
+          </div>
+          <div class="example-bottom">
+            <p>
+              Fictieve voorbeelden, vooraf geschreven. Hier wordt niets
+              gegenereerd of geplaatst.
+            </p>
+            <button type="button" id="copy-post" class="text-link dark-link">
+              Kopieer deze post <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <p
+            id="interaction-status"
+            class="sr-only"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </div>
+      </section>
+
+      <section
+        id="aanpak"
+        class="approach section-wrap"
+        data-sc-act="flow"
+        aria-labelledby="approach-title"
+      >
+        <div class="approach-intro" data-sc-in>
+          <p class="section-note">De aanpak</p>
+          <h2 id="approach-title">
+            Het systeem helpt.<br />Jij blijft de bron.
+          </h2>
+          <p>
+            Een vaste werkwijze voor content die ergens over gaat. Met jouw
+            kennis aan het begin en jouw akkoord aan het einde.
+          </p>
+        </div>
+        <ol class="process-list">
+          <li data-sc-in>
+            <span class="process-index" aria-hidden="true">↗</span>
+            <div>
+              <h3>We leren jouw bedrijf kennen.</h3>
+              <p>
+                Je diensten, klanten, ideeën en manier van praten vormen de
+                basis. Van een goede klantvraag tot een spraakbericht.
+              </p>
+            </div>
+            <span class="process-tag">De bron</span>
+          </li>
+          <li data-sc-in>
+            <span class="process-index" aria-hidden="true">↗</span>
+            <div>
+              <h3>We vinden het verhaal erin.</h3>
+              <p>
+                Onderzoek en AI helpen met invalshoeken en concepten. We bewaken
+                wat klopt en wat echt bij je past.
+              </p>
+            </div>
+            <span class="process-tag">De vertaling</span>
+          </li>
+          <li data-sc-in>
+            <span class="process-index" aria-hidden="true">↗</span>
+            <div>
+              <h3>Jij geeft het laatste akkoord.</h3>
+              <p>
+                Bekijk de post, pas iets aan of geef akkoord. We plaatsen pas
+                als jij achter de inhoud staat.
+              </p>
+            </div>
+            <span class="process-tag">Jouw stem</span>
+          </li>
+          <li data-sc-in>
+            <span class="process-index" aria-hidden="true">↗</span>
+            <div>
+              <h3>We leren van wat het losmaakt.</h3>
+              <p>
+                We kijken naar relevante reacties en gesprekken. Die inzichten
+                helpen om de volgende posts scherper te maken.
+              </p>
+            </div>
+            <span class="process-tag">Het vervolg</span>
+          </li>
+        </ol>
+      </section>
+
+      <section
+        class="closing"
+        data-sc-act="flow"
+        aria-labelledby="closing-title"
+      >
+        <div class="closing-main section-wrap">
+          <div class="closing-top">
+            <span class="closing-mark" aria-hidden="true">✳</span
+            ><span>Goede verhalen beginnen bij de bron.</span>
+          </div>
+          <h2 id="closing-title">Er zit meer<br />in jullie verhaal.</h2>
+          <div class="takeaway">
+            <p>
+              Begin met een klein voorbeeld.<br />Neem jouw gekozen invalshoek
+              mee.
+            </p>
+            <button
+              id="download-example"
+              type="button"
+              class="button button-dark"
+            >
+              <span>Download jouw voorbeeld</span
+              ><span aria-hidden="true">↓</span>
+            </button>
+          </div>
+          <p class="selected-summary" id="selected-summary">
+            Jouw selectie: een klantvraag als inzicht.
+          </p>
+          <div id="vragen" class="faq">
+            <h3>Goed om te weten.</h3>
+            <div>
+              <details>
+                <summary>
+                  Moet ik zelf al goed kunnen schrijven?<span aria-hidden="true"
+                    >+</span
+                  >
+                </summary>
+                <p>
+                  Nee. Jouw kennis is het begin. Een klantvraag, uitleg of
+                  spraakbericht kan al genoeg zijn om samen een eerste concept
+                  te maken.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  Gaat alles volledig automatisch?<span aria-hidden="true"
+                    >+</span
+                  >
+                </summary>
+                <p>
+                  Onze aanpak houdt jou betrokken. AI helpt met onderzoek en
+                  schrijven. Jij controleert de inhoud en geeft akkoord voordat
+                  een post online gaat.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  Garanderen jullie bereik of klanten?<span aria-hidden="true"
+                    >+</span
+                  >
+                </summary>
+                <p>
+                  Nee. We werken aan herkenbare content en een regelmatig ritme.
+                  Bereik, gesprekken en klanten hangen ook af van je aanbod,
+                  doelgroep en deelname. Daarom meten en verbeteren we stap voor
+                  stap.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  Wat kan ik op deze pagina proberen?<span aria-hidden="true"
+                    >+</span
+                  >
+                </summary>
+                <p>
+                  Dit is een websiteconcept. Je kunt vooraf geschreven
+                  voorbeelden bekijken, kopiëren en downloaden. Er is nog geen
+                  account, betaling of publicatiekoppeling aan deze pagina
+                  verbonden.
+                </p>
+              </details>
+            </div>
+          </div>
+          <footer class="footer">
+            <a class="brand" href="#main"
+              ><svg
+                viewBox="0 0 36 36"
+                width="32"
+                height="32"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 27V9h6v18zm10 0V5h6v22zm10 0V13h6v14z"
+                  fill="currentColor"
+                /></svg
+              ><span>naam volgt</span></a
+            ><span>Websiteconcept · september 2026</span
+            ><a href="#main">Naar het begin ↑</a>
+          </footer>
+        </div>
+      </section>
+    </main>
+    <noscript
+      ><style>
+        [data-sc-in],
+        [data-sc-cue] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .example,
+        .sc-stage {
+          height: auto !important;
+          position: relative !important;
+        }
+        button,
+        #angle {
+          display: none;
+        }
+        .source-options {
+          display: none;
+        }
+      </style>
+      <p class="noscript-note">
+        Je ziet het eerste voorbeeld. Schakel JavaScript in om varianten te
+        kiezen en te downloaden.
+      </p></noscript
+    >
+    <script src="./assets/vendor/scrollcraft.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
