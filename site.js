@@ -102,7 +102,7 @@ if (rotEl && !reduce) {
   };
   const plan = () => {
     clearInterval(R.timer);
-    if (R.inView && !document.hidden) R.timer = setInterval(next, 3600);
+    if (R.inView && !document.hidden) R.timer = setInterval(next, 6000);
   };
   build();
   new IntersectionObserver(([e]) => { R.inView = e.isIntersecting; plan(); }).observe(rotEl);
