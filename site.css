@@ -2884,3 +2884,17 @@ html[data-slot="A"] .sl-b, html[data-slot="B"] .sl-a, html:not([data-slot]) .sl-
 /* herziening 64: wat we doen op regel één, waarvoor op regel twee. */
 .hero-sub { max-width: 40rem; }
 .hero-sub b { display: block; text-wrap: balance; }
+
+/* ---------------------------------------- herziening 65: "Wij maken het zichtbaar." linksboven, geen voorbeeldlabel --- */
+/* Op groot scherm staat de zin linksboven, als kop boven het beeld (Mathew). Op de telefoon blijft hij onderaan,
+   want bovenaan draait daar een kaartje langs. */
+@media (min-width: 761px) {
+  .zicht-cap { top: calc(var(--bar-h) + clamp(24px, 5vh, 56px)); bottom: auto; }
+}
+/* Ruimte voor de zin: zodra het beeld opengaat, zakt het midden (logo, ringen, kaartjes) 9vh, zodat geen
+   rondzwevend kaartje de zin bovenaan raakt. Tijdens "Van jouw kennis ... naar hun feed." staat het logo nog in het midden. */
+@media (min-width: 761px) {
+  .zicht-stage { --zy: calc(var(--g, 0) * 9vh); }
+  .zf-glow, .zf-dots, .zf-hud, .zf-pulse, .zf-core, .zf-card { top: calc(50% + var(--zy, 0px)); }
+  .zf-scene { -webkit-mask: linear-gradient(#000 64%, rgba(0, 0, 0, 0.3) 100%); mask: linear-gradient(#000 64%, rgba(0, 0, 0, 0.3) 100%); }
+}
