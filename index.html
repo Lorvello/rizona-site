@@ -2,447 +2,401 @@
 <html lang="nl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#2b2622" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#030912" />
+    <meta name="color-scheme" content="dark" />
     <meta
       name="description"
-      content="Van de kennis in je bedrijf naar herkenbare LinkedIn-content. Ontdek onze aanpak en probeer een interactief voorbeeld."
+      content="LinkedIn-posts uit wat jij al weet. Wij schrijven je LinkedIn-posts, gericht op bereik bij je toekomstige klanten."
     />
-    <title>Rizona Studio · Jullie kennis. Eindelijk gezien.</title>
-    <link rel="icon" type="image/svg+xml" href="./assets/mark.svg" />
-    <link
-      rel="preload"
-      href="./assets/fonts/manrope-latin-500-normal.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <title>Rizona Studio · LinkedIn-posts uit wat jij al weet</title>
+    <link rel="icon" type="image/png" href="./assets/brand/r-64.png" />
+    <link rel="preload" href="./assets/fonts/manrope-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./assets/fonts/manrope-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="./assets/vendor/scrollcraft.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <script>
-      document.documentElement.classList.add("js");
-    </script>
+    <link rel="stylesheet" href="./site.css" />
+    <script>document.documentElement.classList.add("js"); document.documentElement.dataset.slot = new URLSearchParams(location.search).get("slot") === "b" ? "B" : "A";</script>
   </head>
   <body>
+    <!-- Iconen: Lucide (ISC), zie assets/vendor/LUCIDE-LICENSE.txt -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <!-- Tijdelijk beeldmerk in de glasstijl: een lichtende kern met een ring eromheen (achter- en voorkant), tot er een echt logo is. -->
+      <defs>
+        <radialGradient id="mk-core" cx="36%" cy="32%" r="72%"><stop offset="0" stop-color="#ffffff" /><stop offset="0.38" stop-color="#bfeaff" /><stop offset="1" stop-color="#1f6f9e" /></radialGradient>
+        <radialGradient id="mk-halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#6cd1fa" stop-opacity="0.45" /><stop offset="1" stop-color="#6cd1fa" stop-opacity="0" /></radialGradient>
+        <linearGradient id="mk-ring" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6cd1fa" stop-opacity="0.35" /><stop offset="0.5" stop-color="#edf3fb" /><stop offset="1" stop-color="#6cd1fa" stop-opacity="0.35" /></linearGradient>
+      </defs>
+      <symbol id="i-mark" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="15" fill="url(#mk-halo)" stroke="none" />
+        <g transform="rotate(-20 20 20)"><path d="M3.5 20 A16.5 6.2 0 0 1 36.5 20" fill="none" stroke="url(#mk-ring)" stroke-width="1.6" stroke-opacity="0.55" /></g>
+        <circle cx="20" cy="20" r="7" fill="url(#mk-core)" stroke="rgba(255,255,255,0.5)" stroke-width="0.6" />
+        <g transform="rotate(-20 20 20)"><path d="M36.5 20 A16.5 6.2 0 0 1 3.5 20" fill="none" stroke="url(#mk-ring)" stroke-width="1.8" /></g>
+        <circle cx="34.6" cy="13.6" r="1.6" fill="#ffd078" stroke="none" />
+      </symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" /></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></symbol>
+    </svg>
+
     <a class="skip-link" href="#main">Naar de inhoud</a>
-    <header class="site-header">
-      <a
-        class="brand"
-        href="#main"
-        aria-label="Rizona Studio, naar het begin"
-      >
-        <svg viewBox="0 0 36 36" width="36" height="36" aria-hidden="true">
-          <path
-            d="M5 27V9h6v18zm10 0V5h6v22zm10 0V13h6v14z"
-            fill="currentColor"
-          />
-        </svg>
-        <span
-          >Rizona Studio<span class="brand-sub">Een nieuw perspectief.</span></span
-        >
+
+    <header class="bar" id="bar">
+      <a class="bar-brand" href="#top" aria-label="Rizona Studio, naar het begin" translate="no">
+        <img class="mark mark-r" src="./assets/brand/r-144.png" alt="" width="144" height="148" />
+        <span class="brand-word"><b>Rizona</b> <span>Studio</span></span>
       </a>
-      <nav aria-label="Hoofdnavigatie">
-        <a href="#aanpak">De aanpak</a>
+      <nav class="bar-links" aria-label="Hoofdnavigatie">
+        <a href="#probleem">Het probleem</a>
+        <a href="#werk">Zo werkt het</a>
+        <a href="#resultaten">In de praktijk</a>
         <a href="#vragen">Vragen</a>
+        <div class="lang" role="group" aria-label="Taal / Language"><button type="button" data-lang="nl" aria-pressed="true">NL</button><span aria-hidden="true">/</span><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
       </nav>
-      <a class="button button-small" href="#voorbeeld"
-        ><span>Bekijk het voorbeeld</span><span aria-hidden="true">↗</span></a
-      >
+      <a class="bar-cta" href="#contact">Plan een gesprek <span class="bar-cta-dot"><svg aria-hidden="true"><use href="#i-up" /></svg></span></a>
+      <button class="bar-menu" id="bar-menu" type="button" aria-expanded="false" aria-controls="sheet">
+        <svg aria-hidden="true"><use href="#i-menu" /></svg><span>Menu</span>
+      </button>
     </header>
+    <div class="sheet" id="sheet" hidden>
+      <nav aria-label="Menu">
+        <a href="#probleem">Het probleem</a>
+        <a href="#werk">Zo werkt het</a>
+        <a href="#resultaten">In de praktijk</a>
+        <a href="#vragen">Vragen</a>
+        <a class="sheet-cta" href="#contact">Plan een gesprek <svg aria-hidden="true"><use href="#i-up" /></svg></a>
+        <div class="lang lang--sheet" role="group" aria-label="Taal / Language"><button type="button" data-lang="nl" aria-pressed="true">NL</button><span aria-hidden="true">/</span><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+      </nav>
+    </div>
+
+    <!-- De achtergrond achter het probleem en de video. Bij het probleem: sterren en nevel. Bij de video: geen ruimte maar een
+         donker podium met een zachte gloed achter de video en de ring eromheen.
+         Aan het eind van de aanpak komen de sterren terug, zodat je weer de ruimte van het contactblok in gaat. -->
+    <div class="deep" id="deep" aria-hidden="true">
+      <div class="deep-neb deep-neb--a"></div>
+      <div class="deep-neb deep-neb--b"></div>
+      <div class="deep-studio" id="deep-studio">
+        <div class="ds-light"></div>
+        <div class="ds-pane ds-pane--a"></div>
+        <div class="ds-pane ds-pane--b"></div>
+        <div class="ds-grain"></div>
+      </div>
+      <div class="deep-stars" id="deep-stars"><span class="zf-st zf-st--far"></span><span class="zf-st zf-st--mid"></span><span class="zf-st zf-st--near"></span></div>
+      <div class="deep-orbits" id="deep-orbits"><div class="do-tilt"><svg class="do-spin" viewBox="-560 -560 1120 1120"><circle r="250" /><circle class="do-dash" r="380" /><circle r="530" /><circle class="do-dot" cx="250" cy="0" r="5" /><circle class="do-dot" cx="-269" cy="-269" r="4" /><circle class="do-dot do-dot--a" cx="0" cy="530" r="5" /></svg></div></div>
+    </div>
 
     <main id="main">
-      <section class="hero" data-sc-act="flow" aria-labelledby="hero-title">
-        <div class="hero-stage" aria-hidden="true">
-          <div class="hero-grid" data-sc-parallax="0.65"></div>
-          <div class="sculpture-wrap" data-sc-parallax="-2.4">
-            <img
-              class="sculpture-poster"
-              src="./assets/sculpture-poster.webp"
-              width="1000"
-              height="1000"
-              alt=""
-              fetchpriority="high"
-            />
-            <canvas id="sculpture" aria-hidden="true"></canvas>
-          </div>
-          <div class="object-label">
-            <span class="tiny-cross">+</span
-            ><span>Een andere kijk<br />op wat je al weet.</span>
-          </div>
-          <div class="specimen-label">
-            KENNIS IN BEWEGING<span>FIG. A</span>
-          </div>
+      <!-- 1 · HERO: de echte orb boven de aarde van de Live-pagina. Sterren, aarde en orb bewegen elk in hun eigen tempo. -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-world" aria-hidden="true">
+          <div class="hero-stars" id="hero-stars"></div>
+          <div class="hero-earth" id="hero-earth"><img src="./assets/live/regiekern-horizon.jpg" alt="" width="1536" height="1024" /><canvas class="earth-gl" id="hero-earth-gl"></canvas></div>
+          <div class="hero-planet" id="hero-planet"></div>
+          <div class="space-tail space-tail--in"><span class="zf-neb"></span><span class="zf-st zf-st--far"></span><span class="zf-st zf-st--mid"></span><span class="zf-st zf-st--near"></span></div>
         </div>
-        <div class="hero-copy">
-          <h1 id="hero-title">
-            Jullie kennis.<br /><span>Eindelijk gezien.</span>
-          </h1>
-          <div class="hero-bottom">
-            <p>
-              We maken LinkedIn-content van wat jullie elke dag al weten.
-              Herkenbaar. Regelmatig. Helemaal jullie.
-            </p>
-            <a href="#voorbeeld" class="text-link"
-              >Bekijk het voorbeeld <span aria-hidden="true">↗</span></a
-            >
+        <div class="hero-inner">
+          <h1 class="hero-title" id="hero-title">LinkedIn-posts uit wat jij al weet.</h1>
+          <div class="hero-orb" id="hero-orb" aria-hidden="true">
+            <canvas class="orb-canvas" id="orb-canvas"></canvas>
+            <img class="orb-still" src="./assets/agents/orbit-orb.webp" alt="" width="192" height="192" />
           </div>
-        </div>
-        <div class="hero-foot">
-          <span>Van expertise naar zichtbaarheid.</span
-          ><span>AI in de werkplaats. Jij aan het woord.</span>
+          <div class="hero-foot" id="hero-foot">
+            <p class="hero-sub">Wij schrijven je LinkedIn-posts, <b>gericht op bereik bij je toekomstige klanten.</b></p>
+            <a class="btn-glass" href="#werk" id="hero-cta"><span class="bg-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" /></svg></span>Bekijk hoe het werkt</a>
+          </div>
         </div>
       </section>
 
-      <section
-        class="thesis section-wrap"
-        data-sc-act="flow"
-        aria-labelledby="thesis-title"
-      >
-        <p class="section-note">Het begint dichterbij dan je denkt.</p>
-        <h2 id="thesis-title">
-          <span class="thesis-line" data-sc-kinetic="words" data-sc-cue="0.05"
-            >De beste content</span
-          >
-          <span class="thesis-line" data-sc-kinetic="words" data-sc-cue="0.15"
-            >zit al in je bedrijf.</span
-          >
-        </h2>
-        <div class="thesis-tail">
-          <span class="line-sign" aria-hidden="true"></span>
-          <p>
-            In die ene klantvraag. In een les uit de praktijk.<br />In een
-            mening die je niet voor jezelf hoeft te houden.
-          </p>
+      <!-- 2 · VAN JOUW KENNIS NAAR HUN FEED: je zoomt de ruimte in naar het LinkedIn-logo met de kaartjes in een baan. -->
+      <section class="zicht" id="staan" data-sc-act="pin" data-sc-span="1.8" aria-label="Van jouw kennis naar hun feed. Wij maken het zichtbaar.">
+        <div class="zicht-stage" data-sc-stage>
+          <p class="zicht-words" aria-hidden="true"><span class="zw-l">Van jouw kennis</span><span class="zw-sp"></span><span class="zw-r">naar hun feed.</span></p>
+          <div class="zicht-frame">
+            <div class="zf-scene" aria-hidden="true">
+              <span class="zf-space"><span class="zf-neb"></span><span class="zf-st zf-st--far"></span><span class="zf-st zf-st--mid"></span><span class="zf-st zf-st--near"></span></span>
+              <span class="zf-glow"></span>
+              <span class="zf-dots"></span>
+              <span class="zf-hud"></span>
+              <span class="zf-pulse"></span><span class="zf-pulse zf-pulse--late"></span>
+              <span class="zf-core">
+                <span class="zf-ring"><i></i></span>
+                <span class="zf-ring zf-ring--b"><i></i></span>
+                <span class="zf-in"><svg class="zf-in-mark" viewBox="-3.2 -3.6 30.4 30.4" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zM7.119 20.452H3.555V9h3.564v11.452z"/></svg></span>
+              </span>
+              <div class="zf-card c1"><div class="zf-float zf-cal"><span class="zf-date"><small>do</small><b>16</b></span><span class="zf-cal-t"><b>Kennismaking ingepland</b><small>10:00 · via je LinkedIn-post</small></span><span class="zf-yes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 3 6-6.6"/></svg></span></div></div>
+              <div class="zf-card c2"><div class="zf-float zf-post"><span class="zf-chip">Jouw post</span><span class="zf-who"><span class="zf-av">JIJ</span><span class="zf-name"><b>Jij</b><small>vandaag geplaatst</small></span></span><p class="zf-hook">De vraag die ik deze week het vaakst kreeg.</p><span class="zf-react"><span class="zf-rx"><i class="rx-like"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7.2v6.3H2.5V7.2z M5 7.2l2.6-4.7c1 0 1.6.7 1.4 1.7l-.4 2.1h3.6c.9 0 1.5.8 1.3 1.6l-1 4.2c-.2.8-.8 1.4-1.6 1.4H5"/></svg></i><i class="rx-clap"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v2.5M4.2 3.3l1.3 2M11.8 3.3l-1.3 2M3 8.5l4.5 5h2.5l3-3.5V8l-1.5-.5L9.5 9.5 6 6.5z"/></svg></i><i class="rx-love"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13.5s-5.5-3.2-5.5-7A3 3 0 0 1 8 4.6a3 3 0 0 1 5.5 1.9c0 3.8-5.5 7-5.5 7z"/></svg></i></span><b>De reacties stromen binnen</b></span><span class="zf-pop" aria-hidden="true"><i class="rx-like"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7.2v6.3H2.5V7.2z M5 7.2l2.6-4.7c1 0 1.6.7 1.4 1.7l-.4 2.1h3.6c.9 0 1.5.8 1.3 1.6l-1 4.2c-.2.8-.8 1.4-1.6 1.4H5"/></svg></i><i class="rx-love"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13.5s-5.5-3.2-5.5-7A3 3 0 0 1 8 4.6a3 3 0 0 1 5.5 1.9c0 3.8-5.5 7-5.5 7z"/></svg></i><i class="rx-clap"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v2.5M4.2 3.3l1.3 2M11.8 3.3l-1.3 2M3 8.5l4.5 5h2.5l3-3.5V8l-1.5-.5L9.5 9.5 6 6.5z"/></svg></i><i class="rx-like"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7.2v6.3H2.5V7.2z M5 7.2l2.6-4.7c1 0 1.6.7 1.4 1.7l-.4 2.1h3.6c.9 0 1.5.8 1.3 1.6l-1 4.2c-.2.8-.8 1.4-1.6 1.4H5"/></svg></i><i class="rx-love"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13.5s-5.5-3.2-5.5-7A3 3 0 0 1 8 4.6a3 3 0 0 1 5.5 1.9c0 3.8-5.5 7-5.5 7z"/></svg></i></span></div></div>
+              <div class="zf-card c3"><div class="zf-float zf-note-card"><span class="zf-bell"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><i></i></span><span class="zf-cal-t"><b>Een beslisser bekeek je profiel</b><small>na je post van vandaag</small></span></div></div>
+              <div class="zf-card c4"><div class="zf-float zf-dm"><span class="zf-dm-h"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10.5H9l-4 3.5V16H4z"/></svg><b>Nieuw bericht</b><i></i></span><span class="zf-who"><span class="zf-av zf-av--b">HR</span><span class="zf-bubble">“Zag je post. Kunnen we volgende week bellen?”</span></span></div></div>
+            </div>
+            <p class="zf-note">Voorbeelden, geen echte klantdata.</p>
+            <p class="zicht-cap"><b>Wij maken het zichtbaar.</b><span>Elke post uit jouw kennis, in jouw woorden.</span></p>
+          </div>
         </div>
       </section>
 
-      <section
-        id="voorbeeld"
-        class="example"
-        data-sc-act="pin"
-        data-sc-span="1.7"
-        aria-labelledby="example-title"
-      >
-        <div
-          class="sc-stage example-stage"
-          data-sc-stage
-          data-sc-verify-state="initial"
-        >
-          <div class="example-heading">
-            <div>
-              <p class="eyebrow">De contentwerkplaats</p>
-              <h2 id="example-title">Eén inzicht.<br />Meer te vertellen.</h2>
+      <!-- 3 · HET PROBLEEM: de pijn van de koper. Vastgezet: links drie korte pijnpunten, rechts een beeld per pijnpunt. Daaronder licht "Het ligt aan de aanpak." op. -->
+      <section class="pain" id="probleem" data-sc-act="pin" data-sc-span="2.6" aria-labelledby="pain-title">
+        <div class="sc-stage pain-stage" data-sc-stage>
+          <div class="wrap pain-grid">
+            <div class="pain-copy">
+              <p class="eyebrow">Het probleem</p>
+              <h2 class="h2" id="pain-title">Je weet dat LinkedIn werkt. Alleen niet hoe.</h2>
+              <ol class="pain-list" id="pain-list">
+                <li data-i="0"><b>Je groeit niet verder dan je eigen kring.</b><span>Je netwerk ziet je post, nieuwe mensen bijna niet.</span></li>
+                <li data-i="1"><b>Je weet niet wat werkt.</b><span>De ene post loopt, de andere niet. En niemand vertelt je waarom.</span></li>
+                <li data-i="2"><b>Het levert geen gesprekken op.</b><span>Je bent zichtbaar, maar er komt geen afspraak uit.</span></li>
+              </ol>
+              <p class="pain-punch" id="pain-punch"><span class="pp-a">Dat ligt niet aan je kennis.</span><span class="pp-b"><span class="pp-w">Het</span> <span class="pp-w">ligt</span> <span class="pp-w">aan</span> <span class="pp-w pp-key">de aanpak.</span></span></p>
             </div>
-            <p>
-              <strong>Fictief voorbeeld.</strong><br />Kies een bron en een
-              invalshoek.
-            </p>
+            <div class="pain-vis" aria-hidden="true">
+              <div class="ps-scene" data-i="0">
+                <div class="ps-card ps-reach2">
+                  <p class="ps-sub">Wie zag je laatste post?</p>
+                  <div class="rb-row">
+                    <span class="rb-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.4"/><path d="M2.5 19c.7-3.4 3.3-5.3 6.5-5.3s5.8 1.9 6.5 5.3z"/><circle cx="16.5" cy="7.5" r="2.8"/><path d="M15.6 12.6c2.8.1 5 1.9 5.6 5"/></svg></span>
+                    <span class="rb-txt"><b>Je eigen netwerk</b><span class="rb-bar"><i style="--w:92%"></i></span></span>
+                  </div>
+                  <div class="rb-row rb-row--low">
+                    <span class="rb-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.6 3.8 5.4 3.8 8.5S14.6 17.9 12 20.5M12 3.5C9.4 6.1 8.2 8.9 8.2 12s1.2 5.9 3.8 8.5"/></svg></span>
+                    <span class="rb-txt"><b>Nieuwe mensen</b><span class="rb-bar"><i style="--w:7%"></i></span><span class="rb-flag">Hier zitten je nieuwe klanten</span></span>
+                  
+                  </div>
+                  <p class="ps-note">Voorbeeld, geen echte cijfers.</p>
+                </div>
+              </div>
+              <div class="ps-scene" data-i="1">
+                <div class="ps-card">
+                  <p class="ps-sub">Jouw laatste posts</p>
+                  <div class="ps-bars"><span style="--h:24%"></span><span style="--h:31%"></span><span class="hit" style="--h:88%"><em>Waarom deze wel?</em></span><span style="--h:19%"></span><span style="--h:27%"></span><span style="--h:22%"></span></div>
+                  <p class="ps-note">Voorbeeld, geen echte cijfers.</p>
+                </div>
+              </div>
+              <div class="ps-scene" data-i="2">
+                <div class="ps-card ps-score">
+                  <p class="ps-sub">Wat leverde je post op?</p>
+                  <ul class="sc-rows">
+                    <li class="yes"><span class="sc-ic"><span class="zf-rx"><i class="rx-like"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 7.2v6.3H2.5V7.2z M5 7.2l2.6-4.7c1 0 1.6.7 1.4 1.7l-.4 2.1h3.6c.9 0 1.5.8 1.3 1.6l-1 4.2c-.2.8-.8 1.4-1.6 1.4H5"/></svg></i><i class="rx-clap"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v2.5M4.2 3.3l1.3 2M11.8 3.3l-1.3 2M3 8.5l4.5 5h2.5l3-3.5V8l-1.5-.5L9.5 9.5 6 6.5z"/></svg></i><i class="rx-love"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13.5s-5.5-3.2-5.5-7A3 3 0 0 1 8 4.6a3 3 0 0 1 5.5 1.9c0 3.8-5.5 7-5.5 7z"/></svg></i></span></span><b>Likes</b><span class="sc-mark"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.4l3 3 6-6.6"/></svg></span></li>
+                    <li class="no"><span class="sc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></span><b>Berichten van klanten</b><span class="sc-zero">0</span><span class="sc-mark"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></span></li>
+                    <li class="no"><span class="sc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><b>Afspraken in je agenda</b><span class="sc-zero">0</span><span class="sc-mark"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></span></li>
+                  </ul>
+                  <p class="ps-cap"><b>Wel likes.</b> Geen gesprek.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="workbench">
-            <div class="source-pane">
-              <fieldset class="source-options">
-                <legend>Waar begint jouw verhaal?</legend>
-                <div class="source-buttons">
-                  <button type="button" data-source="vraag" aria-pressed="true">
-                    <span aria-hidden="true">?</span>Een klantvraag
-                  </button>
-                  <button type="button" data-source="les" aria-pressed="false">
-                    <span aria-hidden="true">↳</span>Een praktijkles
-                  </button>
-                  <button
-                    type="button"
-                    data-source="visie"
-                    aria-pressed="false"
-                  >
-                    <span aria-hidden="true">✳</span>Een eigen visie
-                  </button>
-                </div>
-              </fieldset>
-              <div class="source-note">
-                <span class="source-note-label"
-                  >De oorspronkelijke gedachte</span
-                >
-                <blockquote id="source-text">
-                  “Klanten vragen ons: is één training genoeg? In ons traject
-                  oefenen teams ook tussen de sessies, met situaties uit hun
-                  eigen werk.”
-                </blockquote>
-                <div class="note-footer">
-                  <span>Fictief voorbeeld van een opleider</span
-                  ><span aria-hidden="true">↗</span>
-                </div>
-              </div>
-              <div class="angle-control">
-                <label for="angle">Maak er een…</label>
-                <select id="angle" name="angle">
-                  <option value="inzicht">Inzicht</option>
-                  <option value="praktisch">Praktische tip</option>
-                  <option value="gesprek">Gespreksstarter</option>
-                </select>
-              </div>
-            </div>
-            <div class="transfer" aria-hidden="true">
-              <span class="transfer-rule"></span
-              ><span class="transfer-arrow">→</span
-              ><span class="transfer-rule"></span>
-            </div>
-            <article class="post" aria-labelledby="post-title">
-              <div class="post-head">
-                <span class="post-avatar" aria-hidden="true">j.</span>
-                <div>
-                  <span class="post-author">Jouw naam</span
-                  ><span class="post-role"
-                    >Jouw expertise, in jouw woorden</span
-                  >
-                </div>
-                <span class="linkedin-mark" aria-hidden="true">in</span>
-              </div>
-              <div id="post-content">
-                <h3 id="post-title">
-                  Een goede training eindigt niet als iedereen naar huis gaat.
-                </h3>
-                <p>“Is één training genoeg?” Die vraag krijgen we vaak.</p>
-                <p>
-                  Daarom laten we teams tussen de sessies oefenen met situaties
-                  uit hun eigen werk. Wat ging er goed? Waar liep je vast?
-                </p>
-                <p>
-                  Die ervaringen nemen we mee naar de volgende sessie. Zo krijgt
-                  een inzicht de kans om een gewoonte te worden.
-                </p>
-              </div>
-              <div class="post-foot">
-                <span class="status-dot"></span
-                ><span>Voorbeeldpost · nog door jou te beoordelen</span>
-              </div>
-            </article>
-          </div>
-          <div class="example-bottom">
-            <p>
-              Voorbeeldtekst, door ons vooraf geschreven voor deze
-              demonstratie. Er wordt hier niets gegenereerd of geplaatst.
-            </p>
-            <button type="button" id="copy-post" class="text-link dark-link">
-              Kopieer deze post <span aria-hidden="true">↗</span>
+        </div>
+      </section>
+
+      <!-- 4 · ZO WERKT HET: zoals op mathewgroen.com/werkwijze. In de kaart speelt een stil voorbeeld zolang hij in beeld is;
+           een klik opent de echte video groot, met geluid, eigen knoppen en volledig scherm. -->
+      <section class="vid" id="werk" aria-labelledby="vid-title">
+        <div class="wrap vid-head">
+          <p class="eyebrow">De aanpak</p>
+          <h2 class="h2" id="vid-title">Zo bouwen we aan jouw groei op LinkedIn.</h2>
+        </div>
+        <div class="vid-stage">
+          <div class="vid-tilt" id="vid-tilt">
+            <button class="vid-frame" id="vid-frame" type="button" aria-haspopup="dialog" aria-label="Speel de video af: zo bouwen we aan jouw groei op LinkedIn">
+              <span class="vid-screen">
+                <img class="vid-poster" src="./assets/video/poster.jpg" alt="" width="832" height="464" loading="lazy" decoding="async" />
+                <video class="vid-video" id="vid" src="./assets/video/orbit-video.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+                <span class="vid-fade"></span>
+                <span class="vid-big" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" /></svg></span>
+              </span>
             </button>
           </div>
-          <p
-            id="interaction-status"
-            class="sr-only"
-            role="status"
-            aria-live="polite"
-          ></p>
         </div>
-      </section>
-
-      <section
-        id="aanpak"
-        class="approach section-wrap"
-        data-sc-act="flow"
-        aria-labelledby="approach-title"
-      >
-        <div class="approach-intro" data-sc-in>
-          <p class="section-note">De aanpak</p>
-          <h2 id="approach-title">
-            Het systeem helpt.<br />Jij blijft de bron.
-          </h2>
-          <p>
-            Een vaste werkwijze voor content die ergens over gaat. Met jouw
-            kennis aan het begin en jouw akkoord aan het einde.
-          </p>
-        </div>
-        <ol class="process-list">
-          <li data-sc-in>
-            <span class="process-index" aria-hidden="true">↗</span>
-            <div>
-              <h3>We leren jouw bedrijf kennen.</h3>
-              <p>
-                Je diensten, klanten, ideeën en manier van praten vormen de
-                basis. Van een goede klantvraag tot een spraakbericht.
-              </p>
-            </div>
-            <span class="process-tag">De bron</span>
-          </li>
-          <li data-sc-in>
-            <span class="process-index" aria-hidden="true">↗</span>
-            <div>
-              <h3>We vinden het verhaal erin.</h3>
-              <p>
-                Onderzoek en AI helpen met invalshoeken en concepten. We bewaken
-                wat klopt en wat echt bij je past.
-              </p>
-            </div>
-            <span class="process-tag">De vertaling</span>
-          </li>
-          <li data-sc-in>
-            <span class="process-index" aria-hidden="true">↗</span>
-            <div>
-              <h3>Jij geeft het laatste akkoord.</h3>
-              <p>
-                Bekijk de post, pas iets aan of geef akkoord. We plaatsen pas
-                als jij achter de inhoud staat.
-              </p>
-            </div>
-            <span class="process-tag">Jouw stem</span>
-          </li>
-          <li data-sc-in>
-            <span class="process-index" aria-hidden="true">↗</span>
-            <div>
-              <h3>We leren van wat het losmaakt.</h3>
-              <p>
-                We kijken naar relevante reacties en gesprekken. Die inzichten
-                helpen om de volgende posts scherper te maken.
-              </p>
-            </div>
-            <span class="process-tag">Het vervolg</span>
-          </li>
+        <!-- Voor zoekmachines en schermlezers: wat de video laat zien. -->
+        <ol class="vid-steps" id="vid-desc">
+          <li>Jij geeft je kennis.</li>
+          <li>Orbit maakt vier concepten, met feitencontrole.</li>
+          <li>Jij keurt goed.</li>
         </ol>
       </section>
 
-      <section
-        class="closing"
-        data-sc-act="flow"
-        aria-labelledby="closing-title"
-      >
-        <div class="closing-main section-wrap">
-          <div class="closing-top">
-            <span class="closing-mark" aria-hidden="true">✳</span
-            ><span>Goede verhalen beginnen bij de bron.</span>
+      <!-- De speler: opent na een klik op de video, groot en met geluid. -->
+      <div class="vid-modal" id="vid-modal" role="dialog" aria-modal="true" aria-label="Zo bouwen we aan jouw groei op LinkedIn" hidden>
+        <div class="vm-backdrop" data-close></div>
+        <div class="vm-box">
+          <button class="vm-close" type="button" aria-label="Sluiten" data-close><svg aria-hidden="true"><use href="#i-x" /></svg></button>
+          <div class="vm-screen"><video class="vm-video" id="vm-video" controls playsinline preload="none" controlslist="nodownload noplaybackrate" disablepictureinpicture poster="./assets/video/poster.jpg"></video></div>
+          <div class="vm-foot">
+            <p class="vm-title">Zo bouwen we aan jouw groei op LinkedIn.</p>
           </div>
-          <h2 id="closing-title">Er zit meer<br />in jullie verhaal.</h2>
-          <div class="takeaway">
-            <p>
-              Begin met een klein voorbeeld.<br />Neem jouw gekozen invalshoek
-              mee.
-            </p>
-            <button
-              id="download-example"
-              type="button"
-              class="button button-dark"
-            >
-              <span>Download jouw voorbeeld</span
-              ><span aria-hidden="true">↓</span>
-            </button>
+        </div>
+      </div>
+
+      <!-- 5 · IN DE PRAKTIJK: hoe Brand Evolves (Luciano) en mathewgroen.com (Mathew) Orbit gebruiken. Teksten goedgekeurd door
+           Luciano en Mathew (15 okt). Zij zijn de oprichters van Rizona; dat staat in één regel onder de kaarten. -->
+      <section class="rv" id="resultaten" aria-labelledby="rv-title">
+        <div class="wrap rv-head">
+          <p class="eyebrow">In de praktijk</p>
+          <h2 class="h2" id="rv-title">Hoe bedrijven dit toepassen.</h2>
+          <p class="pk-sub">Twee bedrijven, twee vakken. Zo werkt Orbit voor hen.</p>
+        </div>
+        <div class="wrap pk-grid">
+          <figure class="pk-card">
+            <div class="pk-co"><span class="pk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></span><span><b>Brand Evolves</b><small>E-mailcampagnes die nieuwe klanten werven</small></span></div>
+            <blockquote class="pk-quote"><p>Wij werven klanten via e-mail. Orbit houdt bij wat er in onze markt speelt en kijkt hoe onze posts het doen. Daar komen concepten uit in onze woorden, en ik zeg pas ja als het klopt.</p></blockquote>
+            <span class="pk-chips"><em>Orbit leest</em><i>Website</i><i>YouTube</i><i>LinkedIn-pagina</i></span>
+            <figcaption class="pk-who"><span class="pk-av" aria-hidden="true">LR</span><span><b>Luciano Raatgever</b><small>Eigenaar, Brand Evolves</small></span></figcaption>
+          </figure>
+          <figure class="pk-card">
+            <div class="pk-co"><span class="pk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.6 5a1.9 1.9 0 0 1 2.7 0l.7.7a1.9 1.9 0 0 1 0 2.7L8.6 18.8z M13.8 6.8l3.4 3.4"/></svg></span><span><b>mathewgroen.com</b><small>Sketch- en whiteboardvideo's</small></span></div>
+            <blockquote class="pk-quote"><p>Ik maak video's die ingewikkelde ideeën helder maken. Orbit kent mijn video's, mijn website en de vragen die klanten stellen. Daar maakt hij postconcepten van, en ik pas aan wat niet klopt.</p></blockquote>
+            <span class="pk-chips"><em>Orbit leest</em><i>Video's</i><i>Website</i><i>Klantvragen</i></span>
+            <figcaption class="pk-who"><span class="pk-av" aria-hidden="true">MG</span><span><b>Mathew Groen</b><small>Eigenaar, mathewgroen.com</small></span></figcaption>
+          </figure>
+        </div>
+        <p class="pk-note">Luciano en Mathew zijn ook de mensen achter Rizona.</p>
+      </section>
+
+      <!-- 7 · SLOT: de Orbit-cirkel met "Zie Orbit in actie." boven dezelfde aarde als bovenaan. De knop opent je eigen mailprogramma. -->
+      <section class="slot" id="contact" aria-labelledby="slot-title">
+        <div class="slot-earth" id="slot-earth" aria-hidden="true">
+          <div class="slot-stars"></div>
+          <div class="slot-globe" id="slot-globe">
+            <img class="slot-earth-img" src="./assets/live/regiekern-horizon.jpg" alt="" width="1536" height="1024" /><canvas class="earth-gl slot-earth-gl" id="slot-earth-gl"></canvas>
+            <span class="pin" id="pin"><span class="pin-dot"></span><span class="pin-stem"></span></span>
           </div>
-          <p class="selected-summary" id="selected-summary">
-            Jouw selectie: een klantvraag als inzicht.
-          </p>
-          <div id="vragen" class="faq">
-            <h3>Goed om te weten.</h3>
-            <div>
-              <details>
-                <summary>
-                  Moet ik zelf al goed kunnen schrijven?<span aria-hidden="true"
-                    >+</span
-                  >
-                </summary>
-                <p>
-                  Nee. Jouw kennis is het begin. Een klantvraag, uitleg of
-                  spraakbericht kan al genoeg zijn om samen een eerste concept
-                  te maken.
-                </p>
-              </details>
-              <details>
-                <summary>
-                  Gaat alles volledig automatisch?<span aria-hidden="true"
-                    >+</span
-                  >
-                </summary>
-                <p>
-                  Onze aanpak houdt jou betrokken. AI helpt met onderzoek en
-                  schrijven. Jij controleert de inhoud en geeft akkoord voordat
-                  een post online gaat.
-                </p>
-              </details>
-              <details>
-                <summary>
-                  Garanderen jullie bereik of klanten?<span aria-hidden="true"
-                    >+</span
-                  >
-                </summary>
-                <p>
-                  Nee. We werken aan herkenbare content en een regelmatig ritme.
-                  Bereik, gesprekken en klanten hangen ook af van je aanbod,
-                  doelgroep en deelname. Daarom meten en verbeteren we stap voor
-                  stap.
-                </p>
-              </details>
-              <details>
-                <summary>
-                  Wat kan ik op deze pagina proberen?<span aria-hidden="true"
-                    >+</span
-                  >
-                </summary>
-                <p>
-                  Dit is een websiteconcept. Je kunt vooraf geschreven
-                  voorbeelden bekijken, kopiëren en downloaden. Er is nog geen
-                  account, betaling of publicatiekoppeling aan deze pagina
-                  verbonden.
-                </p>
-              </details>
-            </div>
+        </div>
+        <!-- De afsluiter: eerst staat Orbit (de echte orb) in beeld. Bij het scrollen groeien zijn ringen uit tot een grote
+             cirkel en wordt de orb de gloed in het midden, met de uitnodiging erin. Naar het idee van Luciano's site. -->
+        <div class="oc" id="oc">
+          <div class="oc-ring" aria-hidden="true">
+            <svg class="oc-arcs" viewBox="-300 -300 600 600">
+              <circle class="oc-dots" r="262" />
+              <g class="oc-spin">
+                <circle class="oc-arc oc-arc--a" r="238" pathLength="100" />
+                <circle class="oc-arc oc-arc--b" r="238" pathLength="100" />
+                <circle class="oc-arc oc-arc--c" r="238" pathLength="100" />
+              </g>
+              <g class="oc-spin oc-spin--rev">
+                <circle class="oc-arc oc-arc--d" r="252" pathLength="100" />
+                <circle class="oc-arc oc-arc--e" r="252" pathLength="100" />
+              </g>
+            </svg>
+            <svg class="oc-orbit" viewBox="-400 -150 800 300"><path class="oc-ell" d="M288.3 -73.6 A388 110 0 0 1 288.3 73.6" /><path class="oc-ell oc-ell--l" d="M-288.3 73.6 A388 110 0 0 1 -288.3 -73.6" /></svg>
           </div>
-          <div class="footer-legal">
-            <p>
-              <strong>Rizona Studio</strong> is een handelsnaam van Rizona,
-              vennootschap onder firma, ingeschreven bij de Kamer van Koophandel
-              onder nummer 97924687.
-            </p>
-            <ul>
-              <li>Bakkersdijk 35, 2993&nbsp;AA Barendrecht, Nederland</li>
-              <li>
-                <a href="mailto:hello@rizonastudio.com"
-                  >hello@rizonastudio.com</a
-                >
-              </li>
-            </ul>
+          <div class="oc-in">
+            <p class="oc-eyebrow">Orbit staat klaar</p>
+            <h2 class="oc-title" id="slot-title">Zie Orbit <span>in actie.</span></h2>
+            <a class="btn-amber oc-go" href="mailto:hello@rizonastudio.com?subject=Gesprek%20over%20Orbit&amp;body=Hallo%20Rizona%2C%0A%0AIk%20wil%20graag%20een%20kort%20gesprek%20plannen%20om%20Orbit%20in%20actie%20te%20zien.%0A%0ANaam%3A%20%0ABedrijf%3A%20%0A">Plan een gesprek <span class="btn-dot"><svg aria-hidden="true"><use href="#i-up" /></svg></span></a>
           </div>
-          <footer class="footer">
-            <a class="brand" href="#main"
-              ><svg
-                viewBox="0 0 36 36"
-                width="32"
-                height="32"
-                aria-hidden="true"
-              >
-                <path
-                  d="M5 27V9h6v18zm10 0V5h6v22zm10 0V13h6v14z"
-                  fill="currentColor"
-                /></svg
-              ><span>Rizona Studio</span></a
-            ><span>© 2026 Rizona</span
-            ><a href="./privacy/">Privacyverklaring</a
-            ><a href="#main">Naar het begin ↑</a>
-          </footer>
+        </div>
+        <div class="oc-under">
+          <p class="oc-sub">In een kort gesprek laten we zien hoe Orbit voor jouw bedrijf werkt.</p>
+          <p class="fine oc-fine">De knop opent je mail. Rizona mailt je terug met een moment. <button class="link-cyan copy-mail" type="button"><svg aria-hidden="true"><use href="#i-copy" /></svg><span>Kopieer e-mailadres</span></button></p>
+        </div>
+        <div class="pin-card" id="pin-card" aria-hidden="true"></div>
+      </section>
+      <!-- 8 · VRAGEN: onderaan, zoals op een gewone website. -->
+      <section class="vragen" id="vragen" aria-labelledby="vragen-title">
+        <div class="wrap vragen-grid">
+          <div class="vragen-left" data-sc-in>
+            <h2 class="h2" id="vragen-title">Wat je wilt weten voor je begint.</h2>
+            <p class="lede">Een AI-bedrijf waarin mensen de richting bepalen. Staat je vraag er niet bij? Mail naar <a class="link-inline" href="mailto:hello@rizonastudio.com">hello@rizonastudio.com</a>.</p>
+          </div>
+          <div class="vragen-right" data-sc-in>
+            <details class="naam-q" id="naam-q">
+              <summary>Wie zijn jullie, en wat betekent Rizona? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <div class="naam-mini">
+                <div class="naam-word" aria-hidden="true">
+                  <span class="nw-rise"><span class="nw-l">R</span><span class="nw-l">i</span><span class="nw-add">se</span></span><span class="nw-zone"><span class="nw-l">z</span><span class="nw-l">o</span><span class="nw-l">n</span><span class="nw-swap"><span class="nw-a">a</span><span class="nw-e">e</span></span><svg class="nw-ring" viewBox="0 0 400 150" preserveAspectRatio="none"><ellipse class="ln" pathLength="1" cx="200" cy="75" rx="192" ry="62" /></svg></span>
+                </div>
+                <p class="naam-cap">Rizona komt van rise en zone: ruimte om zichtbaar te worden. Je hoeft geen ander bedrijf te worden om gehoord te worden; de kennis is er al.</p>
+                <ul class="naam-trio">
+                  <li><b>Rizona Studio</b> geeft richting.</li>
+                  <li><b>Orbit</b> brengt structuur.</li>
+                  <li><b>Jij</b> blijft het middelpunt.</li>
+                </ul>
+                <p class="naam-who">Rizona Studio is opgericht door Mathew Groen, Luciano Raatgever en Jamie Tahiri.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Klinkt het wel als mij? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <p>Schrijven werkt vanuit jouw kennisbank: je aanpak, je ervaring en de vragen die klanten stellen. Je leest elk concept, past aan wat niet klopt en keurt pas dan goed.</p>
+            </details>
+            <details>
+              <summary>Kan ik dit niet zelf met ChatGPT? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <p>Dat kan. Dan begin je elke keer bij nul en controleer je alles zelf. Orbit werkt vanuit jouw eigen kennisbank, elke agent doet één taak en de feitencontrole loopt elke post na. Jij zegt daarna pas ja.</p>
+            </details>
+            <details>
+              <summary>Wat kost het? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <p>Dat bespreken we in het eerste gesprek, als we weten wat je wilt delen.</p>
+            </details>
+            <details>
+              <summary>Wat gebeurt er met mijn kennis? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <p>Je kennis komt in je eigen kennisbank, opgeslagen in een datacenter in de Europese Unie. Naar de AI gaat alleen wat nodig is voor die ene post. Alles staat in onze <a class="link-inline" href="./privacy/">privacyverklaring</a>.</p>
+            </details>
+            <details>
+              <summary>Wat lever ik zelf aan? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <p>Bij de start deel je je diensten, de vragen die klanten stellen en voorbeelden uit je praktijk. Daarna lees je de concepten en keur je goed. We beginnen met tekst en één expertprofiel per klant.</p>
+            </details>
+            <details>
+              <summary>Moet ik zelf goed kunnen schrijven? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <p>Nee. Je expertise is het begin. We bespreken samen welk inzicht je wilt delen en maken daar een tekstconcept van.</p>
+            </details>
+            <details>
+              <summary>Gaat alles automatisch? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <p>Nee. Orbit maakt het concept en loopt het na op feiten. Jij controleert de inhoud en geeft akkoord voordat een post online gaat.</p>
+            </details>
+            <details id="voor-wie">
+              <summary>Voor wie is Rizona Studio? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <p>Voor bedrijven die aan andere bedrijven verkopen en via LinkedIn willen groeien en klanten willen spreken. Het past vooral als je veel kennis in huis hebt die nu weinig zichtbaar is, zoals adviesbureaus, trainers en andere specialisten. Of het bij jou past, bekijken we samen in het eerste gesprek.</p>
+            </details>
+            <details>
+              <summary>Garanderen jullie bereik of klanten? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <p>We schrijven met jouw expertise als bron. Bereik of klanten garanderen we niet; het doel spreken we per klant af.</p>
+            </details>
+            <details>
+              <summary>Wat is de Raad van Vier? <svg aria-hidden="true"><use href="#i-chev" /></svg></summary>
+              <p>Vier adviseurs van Orbit: de Tegenspreker, de Verkenner, de Koper en de Factchecker. Orbit legt elk plan aan hen voor en weegt hun antwoorden voordat het concept naar jou gaat.</p>
+            </details>
+          </div>
         </div>
       </section>
     </main>
-    <noscript
-      ><style>
-        [data-sc-in],
-        [data-sc-cue] {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-        .example,
-        .sc-stage {
-          height: auto !important;
-          position: relative !important;
-        }
-        button,
-        #angle {
-          display: none;
-        }
-        .source-options {
-          display: none;
-        }
-      </style>
-      <p class="noscript-note">
-        Je ziet het eerste voorbeeld. Schakel JavaScript in om varianten te
-        kiezen en te downloaden.
-      </p></noscript
-    >
+
+    <footer class="foot">
+      <div class="wrap foot-grid">
+        <div class="foot-brand">
+          <a class="bar-brand" href="#top" translate="no">
+            <img class="mark mark-r" src="./assets/brand/r-144.png" alt="" width="144" height="148" />
+            <span class="brand-word"><b>Rizona</b> <span>Studio</span></span>
+          </a>
+          <p>Ruimte voor wat jij weet. Orbit by Rizona Studio.</p>
+        </div>
+        <nav class="foot-col" aria-label="Pagina">
+          <h3>Pagina</h3>
+          <a href="#probleem">Het probleem</a>
+          <a href="#werk">Zo werkt het</a>
+          <a href="#resultaten">In de praktijk</a>
+          <a href="#vragen">Vragen</a>
+        </nav>
+        <div class="foot-col">
+          <h3>Contact</h3>
+          <a href="mailto:hello@rizonastudio.com">hello@rizonastudio.com</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h3>Juridisch</h3>
+          <a href="./privacy/">Privacyverklaring</a>
+          <span>KvK 97924687</span>
+          <span>Bakkersdijk 35, 2993 AA Barendrecht</span>
+        </div>
+      </div>
+      <div class="wrap foot-legal">
+        <p><span translate="no">Rizona Studio</span> is een handelsnaam van Rizona, vennootschap onder firma, ingeschreven bij de Kamer van Koophandel onder nummer 97924687. © 2026 Rizona.</p>
+        <p class="foot-credit">LinkedIn is een merk van LinkedIn Corporation.</p>
+      </div>
+    </footer>
+
     <script src="./assets/vendor/scrollcraft.js"></script>
-    <script type="module" src="./app.js"></script>
+    <script type="module" src="./site.js"></script>
+    <script src="./i18n.js" defer></script>
   </body>
 </html>

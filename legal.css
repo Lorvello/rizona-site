@@ -1,0 +1,38 @@
+/* Privacyverklaring in de glaswereld. Alleen opmaak; de tekst staat in privacy/index.html. */
+@font-face { font-family: "Manrope"; src: url("./assets/fonts/manrope-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("./assets/fonts/manrope-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("./assets/fonts/manrope-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root { --sc-ink: #edf3fb; --sc-ink-soft: #9fb4cc; color-scheme: dark; }
+*, *::before, *::after { box-sizing: border-box; }
+html { background: #030912; }
+body {
+  margin: 0; font-family: "Manrope", system-ui, sans-serif; font-size: 17px; line-height: 1.62; color: #c9d6e3;
+  background: radial-gradient(ellipse at 66% 0%, #3144522e, transparent 50%), #080b0e; -webkit-font-smoothing: antialiased;
+}
+::selection { background: rgba(108, 209, 250, .32); color: #edf3fb; }
+:focus-visible { outline: 2px solid #6cd1fa; outline-offset: 3px; border-radius: 8px; }
+a { color: #6cd1fa; text-underline-offset: .25em; text-decoration-color: rgba(108, 209, 250, .4); }
+a:hover { color: #b3e6fc; }
+h1, h2, h3 { color: #edf3fb; font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+.section-wrap { width: min(100%, 980px); margin: 0 auto; padding-inline: clamp(18px, 4vw, 48px); }
+.skip-link { position: fixed; z-index: 50; top: 12px; left: 12px; padding: 10px 16px; border-radius: 999px; background: #0b141e; color: #edf3fb; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+.site-header {
+  position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  height: 64px; padding: 0 clamp(18px, 4vw, 48px); border-bottom: 1px solid #8196a41b;
+  background: linear-gradient(180deg, rgba(8, 11, 14, .94), rgba(8, 11, 14, .7)); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.brand { display: inline-flex; align-items: center; gap: 12px; color: #edf3fb; text-decoration: none; font-weight: 700; }
+.brand svg { width: 26px; height: 26px; }
+.brand-sub { margin-left: 10px; padding-left: 10px; border-left: 1px solid rgba(255, 255, 255, .16); color: #9fb4cc; font-weight: 600; }
+.site-header nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 600; }
+.legal h1 { letter-spacing: -0.04em; }
+.legal li { margin: 4px 0; }
+.legal strong { color: #edf3fb; }
+.footer { display: flex; flex-wrap: wrap; gap: 8px 28px; padding-block: 28px 40px; border-top: 1px solid rgba(255, 255, 255, .08); font-size: 14px; color: #9fb4cc; }
+.footer .brand { font-size: 15px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid rgba(255, 255, 255, .08); }
+th { color: #edf3fb; }
+@media (max-width: 560px) { .brand-sub { display: none; } }
