@@ -2898,3 +2898,20 @@ html[data-slot="A"] .sl-b, html[data-slot="B"] .sl-a, html:not([data-slot]) .sl-
   .zf-glow, .zf-dots, .zf-hud, .zf-pulse, .zf-core, .zf-card { top: calc(50% + var(--zy, 0px)); }
   .zf-scene { -webkit-mask: linear-gradient(#000 64%, rgba(0, 0, 0, 0.3) 100%); mask: linear-gradient(#000 64%, rgba(0, 0, 0, 0.3) 100%); }
 }
+
+/* ---------------------------------------- herziening 66: de herozin wisselt --- */
+/* Vijf zinnen op dezelfde plek (grid), zodat de regel nooit verspringt; alleen de actieve is zichtbaar. */
+.hero-sub .hero-rot { display: grid; justify-items: center; }
+.rot-stack { display: grid; }
+.rot-line { grid-area: 1 / 1; visibility: hidden; text-wrap: balance; }
+.rot-line.is-on, .rot-line.is-out { visibility: visible; }
+/* Binnenkomen: woord voor woord van onder, uit de waas, eerst cyaan en dan wit. */
+.rw { display: inline-block; opacity: 0; filter: blur(7px); transform: translate3d(0, 0.5em, 0); color: var(--cyan);
+  transition: opacity 0.5s var(--ease), filter 0.6s var(--ease), transform 0.6s var(--ease), color 0.9s var(--ease); }
+.rot-line.is-on .rw { opacity: 1; filter: blur(0); transform: none; color: var(--ink);
+  transition-delay: calc(0.18s + var(--i) * 55ms), calc(0.18s + var(--i) * 55ms), calc(0.18s + var(--i) * 55ms), calc(0.55s + var(--i) * 55ms); }
+/* Weggaan: omhoog en in de waas, sneller dan het binnenkomen. */
+.rot-line.is-out .rw { opacity: 0; filter: blur(7px); transform: translate3d(0, -0.45em, 0); color: var(--ink);
+  transition-duration: 0.38s; transition-delay: calc(var(--i) * 28ms); }
+/* De eerste zin staat er bij het laden gewoon, zonder animatie. */
+.rot-line.is-still .rw { transition: none; }

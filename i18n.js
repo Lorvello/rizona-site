@@ -142,7 +142,7 @@
     nodes = []; attrs = [];
     const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: (n) => {
       const el = n.parentElement;
-      if (!el || el.closest("script, style, .vw, svg")) return NodeFilter.FILTER_REJECT;
+      if (!el || el.closest("script, style, .vw, svg, .rot-stack")) return NodeFilter.FILTER_REJECT;
       return EN[n.nodeValue.replace(/\s+/g, " ").trim()] ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
     } });
     let n;

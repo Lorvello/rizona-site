@@ -57,6 +57,59 @@ const spyIO = new IntersectionObserver((entries) => entries.forEach((e) => {
 ["probleem", "werk", "resultaten", "contact", "vragen"].forEach((id) => { const el = document.getElementById(id); if (el) spyIO.observe(el); });
 const heroIO = new IntersectionObserver(([e]) => { if (e.isIntersecting) spyLinks.forEach((a) => a.removeAttribute("aria-current")); }, { rootMargin: "-45% 0px -50% 0px" });
 heroIO.observe($("#top"));
+
+// Herozin: het tweede deel wisselt rustig tussen vijf zinnen over wat we doen (alleen claims uit B-0026).
+// De woorden lossen op naar boven en de nieuwe komen woord voor woord binnen, eerst cyaan, dan wit.
+// Alle zinnen liggen op dezelfde plek, dus de regel springt niet. Stil bij minder beweging en buiten beeld.
+const ROT = {
+  nl: ["gericht op bereik bij je toekomstige klanten.", "uit de kennis die je al in huis hebt.", "gericht op gesprekken met nieuwe klanten.", "onderbouwd met bronnen uit jouw vak.", "die pas online gaan als jij ja zegt."],
+  en: ["aimed at reaching your future clients.", "from the knowledge you already have in-house.", "aimed at conversations with new clients.", "backed by sources from your field.", "that only go live once you say yes."],
+};
+const rotEl = $("#hero-rot");
+if (rotEl && !reduce) {
+  const sr = document.createElement("span");
+  sr.className = "sr-only";
+  sr.textContent = rotEl.textContent;
+  const stack = document.createElement("span");
+  stack.className = "rot-stack";
+  stack.setAttribute("aria-hidden", "true");
+  rotEl.replaceChildren(sr, stack);
+  const R = { i: 0, lines: [], timer: 0, inView: true };
+  const build = () => {
+    const list = ROT[document.documentElement.lang === "en" ? "en" : "nl"];
+    stack.replaceChildren(...list.map((zin, n) => {
+      const line = document.createElement("span");
+      line.className = "rot-line" + (n === R.i ? " is-on is-still" : "");
+      zin.split(" ").forEach((w, k) => {
+        if (k) line.append(" ");
+        const span = document.createElement("span");
+        span.className = "rw";
+        span.style.setProperty("--i", k);
+        span.textContent = w;
+        line.append(span);
+      });
+      return line;
+    }));
+    R.lines = [...stack.children];
+  };
+  const next = () => {
+    const cur = R.lines[R.i];
+    R.i = (R.i + 1) % R.lines.length;
+    const nxt = R.lines[R.i];
+    R.lines.forEach((l) => l.classList.remove("is-out", "is-still"));
+    cur.classList.replace("is-on", "is-out");
+    nxt.classList.add("is-on");
+  };
+  const plan = () => {
+    clearInterval(R.timer);
+    if (R.inView && !document.hidden) R.timer = setInterval(next, 3600);
+  };
+  build();
+  new IntersectionObserver(([e]) => { R.inView = e.isIntersecting; plan(); }).observe(rotEl);
+  document.addEventListener("visibilitychange", plan);
+  // Taalknop: de zinnen meteen in de nieuwe taal, op dezelfde plek in de rij.
+  new MutationObserver(build).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+}
 document.addEventListener("click", (e) => {
   const a = e.target.closest('a[href^="#"]');
   if (!a || a.classList.contains("skip-link")) return;
