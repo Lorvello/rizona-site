@@ -79,7 +79,7 @@
     "Zie Orbit": "See Orbit",
     "in actie.": "in action.",
     "In een kort gesprek laten we zien hoe Orbit voor jouw bedrijf werkt.": "In a short call, we show you how Orbit works for your business.",
-    "De knop opent je mail. Rizona mailt je terug met een moment.": "The button opens your email. Rizona replies with a time.",
+    "Kies zelf een dag en tijd. Liever mailen?": "Pick a day and time yourself. Prefer email?",
     "Kopieer e-mailadres": "Copy email address",
     "Wat je wilt weten voor je begint.": "What you want to know before you start.",
     "Een AI-bedrijf waarin mensen de richting bepalen. Staat je vraag er niet bij? Mail naar": "An AI company where people set the direction. Question not listed? Email",

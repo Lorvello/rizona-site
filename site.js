@@ -456,7 +456,17 @@ function slotFrame(dt) {
 }
 
 // ------------------------------------------------------------ gesprek plannen ---
-// "Plan een gesprek" opent de eigen mail met een kort bericht klaar. Het mailadres kan ook gekopieerd worden.
+// "Plan een gesprek" opent de agenda van Cal.com in een venster op de site: de bezoeker kiest zelf een dag en tijd.
+// Laadt Cal.com niet (blokkering, geen netwerk), dan opent de link de boekingspagina in een nieuw tabblad.
+// Het laadstuk hieronder is de standaardcode van Cal.com. Het mailadres kan nog steeds gekopieerd worden.
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "gesprek", { origin: "https://app.cal.com" });
+Cal.ns.gesprek("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view" });
+$$("[data-plan]").forEach((a) => a.addEventListener("click", (e) => {
+  if (!window.Cal.instance) return;
+  e.preventDefault();
+  Cal.ns.gesprek("modal", { calLink: "jamierizonastudio/kennismakingsgesprek", config: { layout: "month_view", theme: "dark" } });
+}));
 $$(".copy-mail").forEach((btn) => btn.addEventListener("click", async () => {
   const label = btn.querySelector("span");
   const en = root.lang === "en";
