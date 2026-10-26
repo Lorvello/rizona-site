@@ -331,15 +331,19 @@ addEventListener("keydown", (e) => {
   }
 });
 // Bij het scrollen komt de video naar je toe, zoals op mathewgroen.com: hij ligt eerst achterover (40 graden) en is
-// kleiner, en staat rechtop op volle grootte als hij bovenaan het scherm komt. Gemeten op hun homepagina.
+// kleiner. Hij staat al rechtop op volle grootte als het stuk op zijn plek staat (de kop net onder de balk, zoals na
+// een klik in het menu), zodat je niet langs de video hoeft te scrollen om hem af te zien.
 const vidStage = $("#werk .vid-stage");
+const vidHead = $("#werk .vid-head");
 const VR = { p: -1 };
 function vidReveal() {
   if (reduce) return;
   const r = vidStage.getBoundingClientRect();
   const vh = innerHeight;
   if (r.bottom < -vh * 0.2 || r.top > vh * 1.3) return;
-  const target = clamp((1.05 - r.top / vh) / 1.05);
+  const start = vh * 1.05;
+  const end = bar.offsetHeight + 24 + (r.top - vidHead.getBoundingClientRect().top) + vh * 0.08;
+  const target = clamp((start - r.top) / Math.max(1, start - end));
   VR.p = VR.p < 0 ? target : lerp(VR.p, target, 0.18);
   if (Math.abs(VR.p - target) < 0.0005) VR.p = target;
   const tilt = isPhone() ? 26 : 40;
