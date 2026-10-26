@@ -2923,3 +2923,16 @@ html[data-slot="A"] .sl-b, html[data-slot="B"] .sl-a, html:not([data-slot]) .sl-
 /* Agendavenster van Cal.com ("Plan een gesprek"). Zonder deze regel tekent de browser bij een donker systeemthema
    een wit vlak achter de agenda, omdat het venster en de pagina een ander kleurschema hebben. */
 cal-modal-box { color-scheme: light; }
+
+/* ---------------------------------------- herziening 70: inloggen voor klanten, naast de hoofdknop --- */
+/* Voor wie al klant is: een rustige cyaan knop naar Orbit (orbit.rizonastudio.com). Amber blijft voor de ene hoofdactie. */
+.bar-end { display: inline-flex; justify-self: end; align-items: center; gap: 8px; }
+.bar-login { display: inline-flex; align-items: center; height: 46px; padding: 0 16px; border-radius: 14px; color: var(--ink); font-size: 14.5px; font-weight: 600; text-decoration: none; white-space: nowrap; border: 1px solid rgba(108, 209, 250, 0.3); background: rgba(108, 209, 250, 0.04); transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease); }
+@media (hover: hover) and (pointer: fine) { .bar-login:hover { border-color: rgba(108, 209, 250, 0.65); background: rgba(108, 209, 250, 0.1); } }
+.bar-login:active { transform: scale(0.97); }
+.bar-login:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.sheet .sheet-login { justify-content: space-between; margin-top: 6px; border: 1px solid rgba(108, 209, 250, 0.3); }
+.sheet .sheet-login svg { width: 18px; height: 18px; color: var(--cyan); }
+@media (max-width: 1240px) and (min-width: 901px) { .bar-login { padding: 0 12px; font-size: 13.5px; } }
+@media (max-width: 900px) { .bar-login { height: 42px; padding: 0 12px; font-size: 13.5px; } }
+@media (max-width: 560px) { .bar-end { display: none; } }

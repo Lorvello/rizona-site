@@ -12,6 +12,8 @@
     "Contact": "Contact",
     "Menu": "Menu",
     "Plan een gesprek": "Book a call",
+    "Inloggen": "Log in",
+    "Inloggen bij Orbit": "Log in to Orbit",
     "LinkedIn-posts uit wat jij al weet.": "LinkedIn posts from what you already know.",
     "Wij schrijven je LinkedIn-posts,": "We write your LinkedIn posts,",
     "gericht op bereik bij je toekomstige klanten.": "aimed at reaching your future clients.",
@@ -127,10 +129,6 @@
     "Sluiten": "Close",
     "Pagina": "Page",
   };
-  const MAIL = {
-    nl: "mailto:hello@rizonastudio.com?subject=Gesprek%20over%20Orbit&body=Hallo%20Rizona%2C%0A%0AIk%20wil%20graag%20een%20kort%20gesprek%20plannen%20om%20Orbit%20in%20actie%20te%20zien.%0A%0ANaam%3A%20%0ABedrijf%3A%20%0A",
-    en: "mailto:hello@rizonastudio.com?subject=Call%20about%20Orbit&body=Hi%20Rizona%2C%0A%0AI%27d%20like%20to%20book%20a%20short%20call%20to%20see%20Orbit%20in%20action.%0A%0AName%3A%20%0ACompany%3A%20%0A",
-  };
   const META = {
     nl: { title: document.title, desc: (document.querySelector('meta[name="description"]') || {}).content || "" },
     en: { title: "Rizona Studio · LinkedIn posts from what you already know", desc: "LinkedIn posts from what you already know. We write your LinkedIn posts, aimed at reaching your future clients." },
@@ -161,7 +159,6 @@
       n.nodeValue = lead + EN[t] + tail;
     });
     attrs.forEach(([el, a, orig]) => el.setAttribute(a, en ? ATTR[orig] : orig));
-    document.querySelectorAll(".oc-go").forEach((a) => a.setAttribute("href", MAIL[lang]));
     html.lang = lang;
     document.title = META[lang].title;
     const md = document.querySelector('meta[name="description"]');
