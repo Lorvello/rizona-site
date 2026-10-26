@@ -33,7 +33,7 @@ const veil = document.createElement("div");
 veil.className = "veil";
 veil.setAttribute("aria-hidden", "true");
 document.body.append(veil);
-const LAND = { "#werk": () => $("#werk .vid-head"), "#vragen": () => $("#vragen"), "#resultaten": () => $("#resultaten .rv-head"), "#voor-wie": () => $("#voor-wie") };
+const LAND = { "#werk": () => $("#werk .vid-head"), "#vragen": () => $("#vragen"), "#voor-wie": () => $("#voor-wie") };
 function jumpTo(id) {
   const el = (LAND[id] && LAND[id]()) || $(id);
   if (!el) return;
@@ -54,7 +54,7 @@ const spyIO = new IntersectionObserver((entries) => entries.forEach((e) => {
   if (!e.isIntersecting) return;
   spyLinks.forEach((a) => a.toggleAttribute("aria-current", a.getAttribute("href") === "#" + e.target.id));
 }), { rootMargin: "-45% 0px -50% 0px" });
-["probleem", "werk", "resultaten", "contact", "vragen"].forEach((id) => { const el = document.getElementById(id); if (el) spyIO.observe(el); });
+["probleem", "werk", "contact", "vragen"].forEach((id) => { const el = document.getElementById(id); if (el) spyIO.observe(el); });
 const heroIO = new IntersectionObserver(([e]) => { if (e.isIntersecting) spyLinks.forEach((a) => a.removeAttribute("aria-current")); }, { rootMargin: "-45% 0px -50% 0px" });
 heroIO.observe($("#top"));
 
