@@ -7,9 +7,9 @@
     <meta name="color-scheme" content="dark" />
     <meta
       name="description"
-      content="LinkedIn-posts uit wat jij al weet. Wij schrijven je LinkedIn-posts, gericht op bereik bij je toekomstige klanten."
+      content="Jouw kennis wordt een LinkedIn-post. Jij deelt een praktijkvoorbeeld, wij schrijven met Orbit een post in jouw woorden en controleren de feiten. Jij geeft akkoord."
     />
-    <title>Rizona Studio · LinkedIn-posts uit wat jij al weet</title>
+    <title>Rizona Studio · Jouw kennis wordt een LinkedIn-post</title>
     <link rel="icon" type="image/png" href="./assets/brand/r-64.png" />
     <link rel="preload" href="./assets/fonts/manrope-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="./assets/fonts/manrope-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
@@ -101,15 +101,21 @@
           <div class="hero-planet" id="hero-planet"></div>
           <div class="space-tail space-tail--in"><span class="zf-neb"></span><span class="zf-st zf-st--far"></span><span class="zf-st zf-st--mid"></span><span class="zf-st zf-st--near"></span></div>
         </div>
+        <!-- Herziening 71: tekst links, de echte orb rechts boven de horizon (zoals het ontwerp van 27 november). -->
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-orb" id="hero-orb" aria-hidden="true">
+          <canvas class="orb-canvas" id="orb-canvas"></canvas>
+          <img class="orb-still" src="./assets/agents/orbit-orb.webp" alt="" width="192" height="192" />
+        </div>
         <div class="hero-inner">
-          <h1 class="hero-title" id="hero-title">LinkedIn-posts uit wat jij al weet.</h1>
-          <div class="hero-orb" id="hero-orb" aria-hidden="true">
-            <canvas class="orb-canvas" id="orb-canvas"></canvas>
-            <img class="orb-still" src="./assets/agents/orbit-orb.webp" alt="" width="192" height="192" />
-          </div>
+          <p class="hero-kicker"><span class="hk-line" aria-hidden="true"></span>Voor adviesbureaus en opleiders</p>
+          <h1 class="hero-title" id="hero-title"><span class="ht-a">Jouw kennis wordt</span> <span class="ht-b">een LinkedIn-post.</span></h1>
           <div class="hero-foot" id="hero-foot">
-            <p class="hero-sub">Wij schrijven je LinkedIn-posts, <b class="hero-rot" id="hero-rot">gericht op bereik bij je toekomstige klanten.</b></p>
-            <a class="btn-glass" href="#werk" id="hero-cta"><span class="bg-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" /></svg></span>Bekijk hoe het werkt</a>
+            <p class="hero-sub">Jij deelt een praktijkvoorbeeld. Wij schrijven met Orbit een post in jouw woorden en controleren de feiten. Jij leest mee en geeft akkoord.</p>
+            <div class="hero-acts">
+              <a class="btn-amber hero-go" href="https://cal.com/jamierizonastudio/kennismakingsgesprek" target="_blank" rel="noopener" data-plan>Plan een gesprek <span class="btn-dot"><svg aria-hidden="true"><use href="#i-up" /></svg></span></a>
+              <a class="hero-link" href="#werk" id="hero-cta">Bekijk hoe het werkt <span class="hl-arrow" aria-hidden="true">↓</span></a>
+            </div>
           </div>
         </div>
       </section>
@@ -204,7 +210,7 @@
           <div class="vid-tilt" id="vid-tilt">
             <button class="vid-frame" id="vid-frame" type="button" aria-haspopup="dialog" aria-label="Speel de video af: zo bouwen we aan jouw groei op LinkedIn">
               <span class="vid-screen">
-                <img class="vid-poster" src="./assets/video/poster.jpg" alt="" width="832" height="464" loading="lazy" decoding="async" />
+                <img class="vid-poster" src="./assets/video/poster.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
                 <video class="vid-video" id="vid" src="./assets/video/orbit-video.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
                 <span class="vid-fade"></span>
                 <span class="vid-big" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" /></svg></span>

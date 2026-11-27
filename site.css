@@ -2936,3 +2936,59 @@ cal-modal-box { color-scheme: light; }
 @media (max-width: 1240px) and (min-width: 901px) { .bar-login { padding: 0 12px; font-size: 13.5px; } }
 @media (max-width: 900px) { .bar-login { height: 42px; padding: 0 12px; font-size: 13.5px; } }
 @media (max-width: 560px) { .bar-end { display: none; } }
+
+/* ---------------------------------------- herziening 71: hero met tekst links, de echte orb rechts (ontwerp 27 nov) --- */
+/* Tekst links, rechts de echte orb boven de horizon van de aarde. De balk bovenaan blijft zoals hij was. */
+.hero-scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(3, 9, 18, 0.92) 0%, rgba(3, 9, 18, 0.72) 30%, rgba(3, 9, 18, 0.18) 52%, rgba(3, 9, 18, 0) 64%); }
+.hero-planet { height: 26%; background: linear-gradient(transparent, rgba(7, 10, 16, 0.6) 55%, var(--sc-canvas) 96%); }
+.hero-inner { z-index: 2; justify-content: center; align-items: flex-start; text-align: left;
+  padding: calc(var(--bar-h) + clamp(20px, 4vh, 48px)) var(--gutter) clamp(28px, 6vh, 72px); }
+.hero-kicker { display: flex; align-items: center; gap: 14px; margin: 0 0 clamp(18px, 3.4vh, 36px); color: var(--soft); font-size: clamp(14px, 1.08vw, 18px); font-weight: 500; letter-spacing: -0.005em; }
+.hk-line { width: 34px; height: 1px; background: var(--amber); opacity: 0.85; }
+.hero-title { font-size: clamp(44px, 5.5vw, 112px); letter-spacing: -0.055em; line-height: 1.02; text-wrap: nowrap; }
+.hero-title .ht-a, .hero-title .ht-b { display: block; }
+.hero-title .ht-b { color: #f8c98a; padding-bottom: 0.06em; }
+.hero-foot { align-items: flex-start; margin-top: 0; padding-bottom: 0; }
+.hero-foot::before { display: none; }
+.hero-sub { max-width: 23.5em; margin: clamp(18px, 3.4vh, 36px) 0 0; color: var(--soft); font-size: clamp(16px, 1.42vw, 25px); line-height: 1.5; text-wrap: pretty; text-align: left; }
+.hero-acts { display: flex; flex-wrap: wrap; align-items: center; gap: 14px clamp(22px, 2.4vw, 38px); margin-top: clamp(24px, 4.4vh, 46px); }
+.hero .hero-go { margin-top: 0; height: clamp(52px, 3.2vw, 62px); padding: 0 clamp(22px, 1.6vw, 30px); gap: 8px; font-size: clamp(15px, 1.05vw, 18px); }
+.hero-go .btn-dot { width: auto; height: auto; background: none; color: var(--amber-ink); }
+.hero-go .btn-dot svg { width: 17px; height: 17px; }
+.hero-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--ink); font-size: clamp(15px, 1.05vw, 18px); font-weight: 600; text-decoration: none; transition: color 0.2s var(--ease); }
+.hl-arrow { display: inline-block; transition: transform 0.25s var(--ease); }
+@media (hover: hover) and (pointer: fine) { .hero-link:hover { color: var(--cyan); } .hero-link:hover .hl-arrow { transform: translateY(3px); } }
+.hero-link:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; border-radius: 6px; }
+/* De orb: rechts, iets boven het midden, net boven de horizon (de aarde wordt in site.js onder hem gelegd). */
+.hero-orb { --orb: clamp(220px, min(25vw, 42vh), 470px); position: absolute; z-index: 1; margin: 0;
+  left: calc(71.5% - var(--orb) / 2); top: calc(46% - var(--orb) / 2); }
+@media (max-width: 1100px) and (min-width: 761px) {
+  .hero-orb { --orb: clamp(200px, 26vw, 300px); left: calc(76% - var(--orb) / 2); }
+}
+@media (max-width: 760px) {
+  .hero { height: auto; min-height: 100svh; }
+  .hero-inner { justify-content: flex-start; padding-top: calc(var(--bar-h) + 30px); padding-bottom: calc(clamp(180px, 52vw, 240px) + 150px); }
+  .hero-title { font-size: clamp(36px, 10.6vw, 54px); text-wrap: balance; }
+  .hero-title .ht-a, .hero-title .ht-b { display: inline; }
+  .hero-sub { font-size: 16.5px; }
+  .hero-acts { gap: 6px 26px; }
+  .hero-scrim { background: linear-gradient(180deg, rgba(3, 9, 18, 0.82) 0%, rgba(3, 9, 18, 0.6) 55%, rgba(3, 9, 18, 0) 72%); }
+  .hero-orb { --orb: clamp(180px, 52vw, 240px); left: calc(62% - var(--orb) / 2); top: auto; bottom: 128px; }
+}
+
+/* ---------------------------------------- herziening 71: "Zo bouwen we aan jouw groei" past op één scherm --- */
+/* Kop en video samen in één schermhoogte: de video krijgt wat er onder de balk en de kop overblijft (16:9, nieuwe video van Mathew). */
+.vid { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center;
+  padding: calc(var(--bar-h) + clamp(14px, 2.6vh, 30px)) 0 clamp(20px, 4vh, 44px); }
+.vid-head { gap: 10px; margin-bottom: 0; }
+.vid-head .h2 { font-size: clamp(28px, 3.1vw, 50px); }
+.vid-stage { margin-top: clamp(16px, 3vh, 30px);
+  width: min(calc(100% - 2 * var(--gutter)), 56rem, calc((100vh - var(--bar-h) - 220px) * 16 / 9));
+  width: min(calc(100% - 2 * var(--gutter)), 56rem, calc((100svh - var(--bar-h) - 220px) * 16 / 9)); }
+.vid-screen, .vm-screen { aspect-ratio: 16 / 9; }
+@media (max-width: 760px) {
+  .vid { min-height: 0; padding: calc(var(--bar-h) + 40px) 0 56px; }
+  .vid-head .h2 { font-size: clamp(26px, 7.6vw, 34px); }
+  .vid-stage { width: calc(100% - 2 * var(--gutter)); }
+}

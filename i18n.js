@@ -18,6 +18,10 @@
     "Wij schrijven je LinkedIn-posts,": "We write your LinkedIn posts,",
     "gericht op bereik bij je toekomstige klanten.": "aimed at reaching your future clients.",
     "Bekijk hoe het werkt": "See how it works",
+    "Voor adviesbureaus en opleiders": "For consultancies and training providers",
+    "Jouw kennis wordt": "Your knowledge becomes",
+    "een LinkedIn-post.": "a LinkedIn post.",
+    "Jij deelt een praktijkvoorbeeld. Wij schrijven met Orbit een post in jouw woorden en controleren de feiten. Jij leest mee en geeft akkoord.": "You share an example from your practice. With Orbit, we write a post in your words and check the facts. You read along and give your approval.",
     "Van jouw kennis": "From your knowledge",
     "naar hun feed.": "to their feed.",
     "do": "Thu",
@@ -131,7 +135,7 @@
   };
   const META = {
     nl: { title: document.title, desc: (document.querySelector('meta[name="description"]') || {}).content || "" },
-    en: { title: "Rizona Studio · LinkedIn posts from what you already know", desc: "LinkedIn posts from what you already know. We write your LinkedIn posts, aimed at reaching your future clients." },
+    en: { title: "Rizona Studio · Your knowledge becomes a LinkedIn post", desc: "Your knowledge becomes a LinkedIn post. You share an example from your practice, we write a post in your words with Orbit and check the facts. You give your approval." },
   };
   const html = document.documentElement;
   let nodes = null; // [textnode, origineel]

@@ -33,11 +33,11 @@ const veil = document.createElement("div");
 veil.className = "veil";
 veil.setAttribute("aria-hidden", "true");
 document.body.append(veil);
-const LAND = { "#werk": () => $("#werk .vid-head"), "#vragen": () => $("#vragen"), "#voor-wie": () => $("#voor-wie") };
+const LAND = { "#werk": () => $("#werk"), "#vragen": () => $("#vragen"), "#voor-wie": () => $("#voor-wie") };
 function jumpTo(id) {
   const el = (LAND[id] && LAND[id]()) || $(id);
   if (!el) return;
-  const pad = id === "#contact" || id === "#top" || id === "#probleem" ? 0 : bar.offsetHeight + 24;
+  const pad = id === "#contact" || id === "#top" || id === "#probleem" || id === "#werk" ? 0 : bar.offsetHeight + 24;
   // "Voor wie" opent de vraag in de vragenlijst.
   if (el.tagName === "DETAILS") el.open = true;
   const go = () => {
@@ -168,15 +168,19 @@ if (cast && !reduce) {
 }
 
 function placeEarth() {
-  // De gloed op de horizon van de foto komt net onder de orb te liggen.
+  // Herziening 71: de orb staat rechts. De gloed op de horizon van de foto ligt links van de orb en net onder hem,
+  // zodat de orb boven de horizon zweeft (zoals het ontwerp van 27 november).
   const hr = heroEl.getBoundingClientRect();
   const ob = orbBox.getBoundingClientRect();
-  const w = Math.max(innerWidth * (isPhone() ? 2.6 : 1.22), 1100);
+  const phone = isPhone();
+  const w = Math.max(innerWidth * (phone ? 2.6 : 1.55), 1100);
   const h = w * 1024 / 1536;
-  const apexY = (ob.bottom - hr.top) - ob.height * 0.1;
+  const orbCx = ob.left + ob.width / 2 - hr.left;
+  const apexX = orbCx - innerWidth * (phone ? 0.1 : 0.14);
+  const apexY = (ob.top - hr.top) + ob.height * (phone ? 0.82 : 0.8);
   earth.style.setProperty("--earth-w", w + "px");
   earth.style.top = (apexY - h * EARTH_APEX.y) + "px";
-  earth.style.marginLeft = ((0.5 - EARTH_APEX.x) * w) + "px";
+  earth.style.marginLeft = (apexX - innerWidth / 2 - (EARTH_APEX.x - 0.5) * w) + "px";
 }
 
 function heroFrame(T, dt) {
@@ -342,7 +346,8 @@ function vidReveal() {
   const vh = innerHeight;
   if (r.bottom < -vh * 0.2 || r.top > vh * 1.3) return;
   const start = vh * 1.05;
-  const end = bar.offsetHeight + 24 + (r.top - vidHead.getBoundingClientRect().top) + vh * 0.08;
+  // Herziening 71: het stuk vult precies één scherm; de video staat recht zodra het stuk bovenaan staat.
+  const end = (r.top - werk.getBoundingClientRect().top) + vh * 0.04;
   const target = clamp((start - r.top) / Math.max(1, start - end));
   VR.p = VR.p < 0 ? target : lerp(VR.p, target, 0.18);
   if (Math.abs(VR.p - target) < 0.0005) VR.p = target;
